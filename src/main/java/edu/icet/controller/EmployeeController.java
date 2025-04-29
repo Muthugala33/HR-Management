@@ -10,8 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee")
 @RequiredArgsConstructor
-
-
+@CrossOrigin
 public class EmployeeController {
 
     final EmployeeService service;
@@ -34,7 +33,11 @@ public class EmployeeController {
     @DeleteMapping("/delete-employee/{id}")
     public void deleteEmployee(@PathVariable Integer id){
         service.deleteEmployee(id);
+    }
 
+    @GetMapping("/search-employee-by-id/{id}")
+    public Employee searchEmployeeById(@PathVariable Integer id){
+       return service.searchEmployeeById(id);
     }
 
 
