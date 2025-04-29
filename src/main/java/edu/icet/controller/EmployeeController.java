@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/employee")
 @RequiredArgsConstructor
 
+
 public class EmployeeController {
 
     final EmployeeService service;
 
-    @PostMapping("add")
+    @PostMapping("/add")
     public void addEmployee(@RequestBody Employee employee){
         service.addEmployee(employee);
     }
