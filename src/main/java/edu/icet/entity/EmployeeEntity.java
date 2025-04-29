@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +23,6 @@ public class EmployeeEntity {
     private String name;
     private String email;
     private String department;
+
+
 }
