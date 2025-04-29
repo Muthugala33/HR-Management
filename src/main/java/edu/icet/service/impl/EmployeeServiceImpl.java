@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
@@ -20,5 +23,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         repository.save(mapper.map(employee, EmployeeEntity.class));
 
 
+    }
+
+    @Override
+    public List<Employee> viewAll() {
+        ArrayList<Employee> employeeList = new ArrayList<>();
+        List<EmployeeEntity> all = repository.findAll();
+
+        all.forEach(employeeEntity -> employeeList.add(mapper.map(employeeEntity , Employee.class)));
+
+        return employeeList;
     }
 }
