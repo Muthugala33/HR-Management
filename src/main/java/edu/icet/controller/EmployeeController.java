@@ -26,4 +26,13 @@ public class EmployeeController {
         return service.viewAll();
     }
 
+    @PutMapping("/update-employee/{id}")
+    public void updateEmployee(@RequestBody Employee employee){
+        service.updateEmployee(employee);
+
+
+    }
+
+
+
 }

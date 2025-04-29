@@ -34,4 +34,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return employeeList;
     }
+
+    @Override
+    public void updateEmployee(Employee employee) {
+        repository.save(mapper.map(employee, EmployeeEntity.class));
+    }
 }
